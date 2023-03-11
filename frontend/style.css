@@ -1,0 +1,3 @@
+body{background-color: rgb(236, 186, 119); display: grid; justify-items: stretch;}
+.hello{background-color: rgb(206, 147, 36); border-radius: 20px;}
+.smt{background-color: brown; size: 100px 100px; height: 50px;border-radius: 20px;}
