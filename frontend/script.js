@@ -11,6 +11,9 @@ function clack(){
             let q=((lenny.responseText-1)+1)
             for (let i=0; i<q; i+=1){
                 let divy=document.createElement("div")
+                
+                // container class name. there is another one below
+                
                 divy.className="lol"
                 body.appendChild(divy)
                 item(i, bb)
@@ -59,6 +62,7 @@ function search(){
             let q=((lenny.responseText-1)+1)
             for (let i=0; i<q; i+=1){
                 let divy=document.createElement("div")
+                // container class name
                 divy.className="lol"
                 body.appendChild(divy)
                 searchitem(i, nami)
