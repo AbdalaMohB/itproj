@@ -11,7 +11,7 @@ function clack(){
             let q=((lenny.responseText-1)+1)
             for (let i=0; i<q; i+=1){
                 let divy=document.createElement("div")
-                divy.className="container"
+                divy.className="lol"
                 body.appendChild(divy)
                 item(i, bb)
             }
@@ -21,17 +21,25 @@ function clack(){
     lenny.responseType = 'text';
     lenny.send()}
 function item(i, bb) {
-    const divs=document.querySelectorAll(".container")[i]
+    const divs=document.querySelectorAll(".lol")[i]
     const Http = new XMLHttpRequest()
     Http.onreadystatechange = function() {
         if (Http.readyState === XMLHttpRequest.DONE) {
             const quals=Http.responseText.split("-")
-            quals[4]+="/5"
-            quals[3]="Genres: "+quals[3]
-            const el=[document.createElement("h1"),document.createElement("p"), document.createElement("p"), document.createElement("pre")]
-            for (let e=1; e<5; e++){
-                el[e-1].appendChild(document.createTextNode(quals[e]))
-                divs.appendChild(el[e-1])
+            quals[6]="Rating: "+quals[6]+"/5"
+            quals[5]="Genres: "+quals[5]
+            
+            
+            //change the tags in el below this comment to change the tags in html. there is a second el below too.
+            
+            
+            const el=[document.createElement("h1"),document.createElement("p"),document.createElement("p"), document.createElement("p"), document.createElement("pre")]
+            const cover=document.createElement("img");
+            cover.src="site/images/src/"+quals[1]
+            divs.appendChild(cover)
+            for (let e=2; e<7; e++){
+                el[e-2].appendChild(document.createTextNode(quals[e]))
+                divs.appendChild(el[e-2])
             }
         }
     }
@@ -39,7 +47,6 @@ function item(i, bb) {
     Http.responseType = 'text';
     Http.send()
 }
-//TODO! put the same html file under multiple genres and use the path to get the right files
 function search(){
     while (body.hasChildNodes()){
         body.removeChild(body.childNodes[0])
@@ -52,7 +59,7 @@ function search(){
             let q=((lenny.responseText-1)+1)
             for (let i=0; i<q; i+=1){
                 let divy=document.createElement("div")
-                divy.className="container"
+                divy.className="lol"
                 body.appendChild(divy)
                 searchitem(i, nami)
             }
@@ -64,17 +71,23 @@ function search(){
     lenny.send()
 }
 function searchitem(i, namy) {
-    const divs=document.querySelectorAll(".container")[i]
+    const divs=document.querySelectorAll(".lol")[i]
     const Http = new XMLHttpRequest()
     Http.onreadystatechange = function() {
         if (Http.readyState === XMLHttpRequest.DONE) {
             const quals=Http.responseText.split("-")
-            quals[4]="Rating: "+quals[4]+"/5"
-            quals[3]="Genres: "+quals[3]
-            const el=[document.createElement("h1"),document.createElement("p"), document.createElement("p"), document.createElement("pre")]
-            for (let e=1; e<5; e++){
-                el[e-1].appendChild(document.createTextNode(quals[e]))
-                divs.appendChild(el[e-1])
+            quals[6]="Rating: "+quals[6]+"/5"
+            quals[5]="Genres: "+quals[5]
+            
+             //change the tags in el below this comment to change the tags in html 
+            
+            const el=[document.createElement("h1"),document.createElement("p"),document.createElement("p"), document.createElement("p"), document.createElement("pre")]
+            const cover=document.createElement("img");
+            cover.src="site/images/src/"+quals[1]
+            divs.appendChild(cover)
+            for (let e=2; e<7; e++){
+                el[e-2].appendChild(document.createTextNode(quals[e]))
+                divs.appendChild(el[e-2])
             }
         }
     }
