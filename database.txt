@@ -1,0 +1,8 @@
+movie-image.extension-Puss in Boots:The Last Wish-(2023/idk)-Puss in Boots discovers that his passion for adventure has taken its toll when he learns that he has burnt through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.- fantasy, action -5
+series-image.extension-stuff, idk:something-(put date here)-(put summary here)- fantasy -3
+series-image.extension-batman-(put date here)-(put summary here)- fantasy, action -4
+movie-image.extension-spiderman-(put date here)-(put summary here)- action -5
+movie-image.extension-COOL ACTION MOVIE-(put date here)-ACTION STUFF- action -5
+movie-image.extension-dino movie-(put date here)-(put summary here)- action -2
+movie-image.extension-James bond-(put date here)-spy stuff- action -4.8
+movie-image.extension-Kingsman-(put date here)-also spy stuff- action -5
