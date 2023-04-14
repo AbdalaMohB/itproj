@@ -11,11 +11,11 @@ function clack(){
             let q=((lenny.responseText-1)+1)
             for (let i=0; i<q; i+=1){
                 let divy=document.createElement("div")
-                
-                // container class name. there is another one below
-                
+                let divy2=document.createElement("div")
+                divy2.className="background";
                 divy.className="lol"
-                body.appendChild(divy)
+                divy2.appendChild(divy)
+                body.appendChild(divy2)
                 item(i, bb)
             }
         }
@@ -31,15 +31,12 @@ function item(i, bb) {
             const quals=Http.responseText.split("-")
             quals[6]="Rating: "+quals[6]+"/5"
             quals[5]="Genres: "+quals[5]
-            
-            
-            //change the tags in el below this comment to change the tags in html. there is a second el below too.
-            
-            
             const el=[document.createElement("h1"),document.createElement("p"),document.createElement("p"), document.createElement("p"), document.createElement("pre")]
             const cover=document.createElement("img");
             cover.src="site/images/src/"+quals[1]
             divs.appendChild(cover)
+            document.querySelectorAll(".background")[i].style.backgroundImage="url('"+cover.src+"')"
+            
             for (let e=2; e<7; e++){
                 el[e-2].appendChild(document.createTextNode(quals[e]))
                 divs.appendChild(el[e-2])
@@ -50,6 +47,7 @@ function item(i, bb) {
     Http.responseType = 'text';
     Http.send()
 }
+//TODO! put the same html file under multiple genres and use the path to get the right files
 function search(){
     while (body.hasChildNodes()){
         body.removeChild(body.childNodes[0])
@@ -62,9 +60,11 @@ function search(){
             let q=((lenny.responseText-1)+1)
             for (let i=0; i<q; i+=1){
                 let divy=document.createElement("div")
-                // container class name
+                let divy2=document.createElement("div")
+                divy2.className="background";
                 divy.className="lol"
-                body.appendChild(divy)
+                divy2.appendChild(divy)
+                body.appendChild(divy2)
                 searchitem(i, nami)
             }
             document.querySelector(".search").value="";
@@ -82,13 +82,11 @@ function searchitem(i, namy) {
             const quals=Http.responseText.split("-")
             quals[6]="Rating: "+quals[6]+"/5"
             quals[5]="Genres: "+quals[5]
-            
-             //change the tags in el below this comment to change the tags in html 
-            
             const el=[document.createElement("h1"),document.createElement("p"),document.createElement("p"), document.createElement("p"), document.createElement("pre")]
             const cover=document.createElement("img");
             cover.src="site/images/src/"+quals[1]
             divs.appendChild(cover)
+            document.querySelectorAll(".background")[i].style.backgroundImage="url('"+cover.src+"')"
             for (let e=2; e<7; e++){
                 el[e-2].appendChild(document.createTextNode(quals[e]))
                 divs.appendChild(el[e-2])
